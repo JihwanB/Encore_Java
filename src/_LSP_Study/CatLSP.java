@@ -1,4 +1,4 @@
-package LSP;
+package _LSP_Study;
 
 public class CatLSP extends AnimalLSP {
 

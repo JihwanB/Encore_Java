@@ -1,4 +1,4 @@
-package SRP;
+package _SRP_Study;
 
 // 인사팀 전용 클래스
 public class HourReporter {

@@ -1,4 +1,4 @@
-package LSP;
+package _LSP_Study;
 
 public class LspMain {
     public static void main(String[] args) {

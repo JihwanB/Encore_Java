@@ -1,4 +1,4 @@
-package OCP;
+package _OCP_Study;
 
 public class AnimalOCP {
     public String type;

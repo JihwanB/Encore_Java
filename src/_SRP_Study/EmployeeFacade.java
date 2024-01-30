@@ -1,4 +1,4 @@
-package SRP;
+package _SRP_Study;
 
 public class EmployeeFacade {
     public String name;

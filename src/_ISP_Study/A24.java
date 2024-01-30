@@ -1,6 +1,7 @@
-package ISP;
+package _ISP_Study;
 
-public class S24 implements ISmartPhone {
+// 무선충전기능, 생체인식, ar이 필요하지 않다면?
+public class A24 implements ISmartPhone{
     @Override
     public void call(String number) {
 
@@ -26,4 +27,3 @@ public class S24 implements ISmartPhone {
 
     }
 }
-

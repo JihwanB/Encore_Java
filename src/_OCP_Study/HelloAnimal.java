@@ -1,4 +1,4 @@
-package OCP;
+package _OCP_Study;
 
 public class HelloAnimal {
     public void hello(AnimalOCP animal) {

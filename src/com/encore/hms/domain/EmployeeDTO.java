@@ -21,4 +21,7 @@ public class EmployeeDTO extends Person {
         return super.personInfo() + ", dept = " + this.getDept();
     }
 
+    @Override
+    public String personInfo() { return super.personInfo() + ", dept = " + this.getDept(); }
+
 }

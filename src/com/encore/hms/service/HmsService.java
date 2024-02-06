@@ -7,6 +7,7 @@ import com.encore.hms.domain.sup.Person;
 import com.encore.hms.util.HmsType;
 import lombok.Getter;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -71,31 +72,33 @@ public class HmsService {
         return null;
     }
 
-    public String updatePerson(String name) {
-        String msg;
-        Person per = searchPerson(name);
-        Scanner sc = new Scanner(System.in);
+    public Person updatePerson(String name) {
 
-        if (per != null) {
-            if (per instanceof StudentDTO) {
-                System.out.print("변경할 학번을 입력하세요 : ");
-                String toUpdate = sc.nextLine();
-                ((StudentDTO) per).setStuId(toUpdate);
-            } else if (per instanceof TeacherDTO) {
-                System.out.print("변경할 과목을 입력하세요 : ");
-                String toUpdate = sc.nextLine();
-                ((TeacherDTO) per).setSubject(toUpdate);
-            } else if (per instanceof EmployeeDTO) {
-                System.out.print("변경할 부서를 입력하세요 : ");
-                String toUpdate = sc.nextLine();
-                ((EmployeeDTO) per).setDept(toUpdate);
-            }
-            msg = "정보를 수정하였습니다.";
-        } else {
-            msg = "존재하지 않는 이름입니다.";
-        }
-        return msg;
+        // 1.
+//        Person[] copyArr = perArr.clone();
+//        // 2.
+//        Arrays.copyOf(perArr, perArr.length);
+
+//        System.out.println("original arr address : " + perArr);
+//        System.out.println("copy arr address : " + copyArr);
+
+        return searchPerson(name);
     }
 
+    public boolean removePerson(String name) {
+
+        for (int i = 0; i < perArr.length; i++) {
+            Person person = perArr[i];
+            if (person.getName().equals(name)) {
+                for (int j = i; j < perArr.length - 1; j++) {
+                    perArr[j] = perArr[j + 1];
+                }
+                idx--;
+                perArr[idx] = null;
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

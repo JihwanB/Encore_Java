@@ -1,5 +1,8 @@
 package com.encore.hms.view;
 
+import com.encore.hms.domain.EmployeeDTO;
+import com.encore.hms.domain.StudentDTO;
+import com.encore.hms.domain.TeacherDTO;
 import com.encore.hms.domain.sup.Person;
 import com.encore.hms.service.HmsService;
 import com.encore.hms.util.HmsType;
@@ -111,11 +114,28 @@ public class HmsView {
 
         sc.nextLine();
         System.out.print("변경하고자 하는 이름을 입력하세요 : ");
-        String name = sc.nextLine();
+        String name = sc.next();
 
-        String msg = service.updatePerson(name);
-        System.out.println(msg);
-        System.out.println(service.searchPerson(name).personInfo() + "\n");
+        Person obj = service.updatePerson(name);
+        if (obj != null) {
+            if (obj instanceof StudentDTO) {
+                System.out.print("수정할 학번을 입력하세요 : ");
+                String stuId = sc.next();
+                ((StudentDTO) obj).setStuId(stuId);
+            } else if (obj instanceof TeacherDTO) {
+                System.out.print("변경할 과목을 입력하세요 : ");
+                String subId = sc.next();
+                ((TeacherDTO) obj).setSubject(subId);
+            } else if (obj instanceof EmployeeDTO) {
+                System.out.print("변경할 부서를 입력하세요 : ");
+                String deptId = sc.next();
+                ((EmployeeDTO) obj).setDept(deptId);
+            }
+            System.out.println("정보를 수정하였습니다\n");
+        } else {
+            System.out.println("정보가 존재하지 않습니다" + "\n");
+        }
+
     }
 
     // Scanner 객체를 이용해서 찾고자하는 이름을 입력받아서
@@ -124,7 +144,22 @@ public class HmsView {
     // 그리고 전체출력을 했을 때 정상적으로 출력되면 OK
     // HmsView - HmsService(removePerson(String name)
     public void remove() {
+        System.out.println();
+        System.out.println(">>> Remove <<<");
 
+        sc.nextLine();
+        System.out.print("삭제하고자 하는 이름을 입력하세요 : ");
+        String name = sc.next();
+
+        Person person = service.searchPerson(name);
+        if (person == null) {
+            System.out.println("정보가 존재하지 않습니다" + "\n");
+        } else {
+            boolean flag = service.removePerson(name);
+            if (flag) {
+                System.out.println("객체를 삭제하였습니다\n");
+            }
+        }
     }
 
     public void subMenu() {

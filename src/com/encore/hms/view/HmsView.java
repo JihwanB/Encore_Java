@@ -31,27 +31,34 @@ public class HmsView {
             System.out.println("5. 생성");
             System.out.println("99. 종료");
             System.out.print("Input Number : ");
-            int number = sc.nextInt();
-            switch (number) {
-                case 1:
-                    perPrint();
-                    break;
-                case 2:
-                    search();
-                    break;
-                case 3:
-                    update();
-                    break;
-                case 4:
-                    remove();
-                    break;
-                case 5:
-                    subMenu();
-                    break;
-                case 99:
-                    System.out.println("프로그램을 종료하고 데이터는 보관되지 않습니다.");
-                    System.exit(0);
-            } // switch end block
+            try {
+                int number = sc.nextInt();
+                switch (number) {
+                    case 1:
+                        perPrint();
+                        break;
+                    case 2:
+                        search();
+                        break;
+                    case 3:
+                        update();
+                        break;
+                    case 4:
+                        remove();
+                        break;
+                    case 5:
+                        subMenu();
+                        break;
+                    case 99:
+                        System.out.println("프로그램을 종료하고 데이터는 보관되지 않습니다.");
+                        System.exit(0);
+                    default:
+                        System.out.println("메뉴에 정의된 숫자만 입력해 주세요.\n");
+                } // switch end block
+            } catch (Exception e) {
+                System.out.println("숫자만 입력하세요.\n");
+                sc.nextLine();
+            }
         } // while end block
     } // main menu end block
 

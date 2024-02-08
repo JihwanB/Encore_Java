@@ -22,6 +22,10 @@ public class HmsView {
     }
 
     public void mainMenu() {
+
+        service.loadFromFile();
+        System.out.println();
+
         while (true) {
             System.out.println(">>> HMS Ver1.0 <<<");
             System.out.println("1. 전체출력");
@@ -50,8 +54,16 @@ public class HmsView {
                         subMenu();
                         break;
                     case 99:
+                        System.out.println("데이터를 저장하시겠습니까? (Y/N)");
+                        String confirmYN = sc.next();
+                        if (confirmYN.equalsIgnoreCase("Y")) {
+                            service.saveToFile();
+                            System.out.println("데이터를 저장 완료!!");
+                            System.exit(0);
+                        }
                         System.out.println("프로그램을 종료하고 데이터는 보관되지 않습니다.");
                         System.exit(0);
+
                     default:
                         System.out.println("메뉴에 정의된 숫자만 입력해 주세요.\n");
                 } // switch end block

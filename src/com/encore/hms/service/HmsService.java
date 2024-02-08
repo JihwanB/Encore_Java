@@ -7,8 +7,10 @@ import com.encore.hms.domain.sup.Person;
 import com.encore.hms.util.HmsType;
 import lombok.Getter;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /*
  * business logic 가지고 있는 클래스
@@ -99,6 +101,57 @@ public class HmsService {
             }
         }
         return false;
+    }
+
+    public void saveToFile() {
+
+        FileOutputStream fos;
+        ObjectOutputStream oos = null;
+
+        try {
+            fos = new FileOutputStream("src/com/encore/stream/test.txt");
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(perArr);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void loadFromFile() {
+
+        FileInputStream fis;
+        ObjectInputStream ois = null;
+
+        try {
+            fis = new FileInputStream("src/com/encore/stream/test.txt");
+            ois = new ObjectInputStream(fis);
+            perArr = (Person[]) ois.readObject();
+            int count = 0;
+            for (Person person : perArr) {
+                if (person != null) {
+                    count++;
+                }
+            }
+            idx = count;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ois != null) ois.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 }

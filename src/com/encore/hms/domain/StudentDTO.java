@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @NoArgsConstructor
-public class StudentDTO extends Person {
+public class StudentDTO extends Person implements Serializable {
 
     private String stuId;
 

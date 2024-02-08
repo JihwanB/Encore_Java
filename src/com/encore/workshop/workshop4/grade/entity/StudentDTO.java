@@ -5,19 +5,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Student extends Employee {
+public class StudentDTO extends EmployeeDTO {
 
     private int oracle;
     private int java;
     private int servlet;
 
-    public Student(String name, String employeeNo, int age, int oracle, int java, int servlet) {
-        this.setName(name);
-        this.setEmployeeNo(employeeNo);
-        this.setAge(age);
+    public StudentDTO(String name, String employeeNo, int age, int oracle, int java, int servlet) {
+
+        super(name, employeeNo, age);
         this.oracle = oracle;
         this.java = java;
         this.servlet = servlet;
+
     }
 
     public int getTotal() {
@@ -25,14 +25,18 @@ public class Student extends Employee {
     }
 
     public double getAverage() {
+
         double total = getTotal();
         total /= 3;
         return total;
+
     }
 
     @Override
-    public String toString() {
-        return String.format("%s %d %d %d %d %s", getName(), getOracle(), getJava(), getServlet(), getTotal(), getAverage());
+    public String emp_Info() {
+
+        return super.emp_Info() + ", oracle= " + oracle + ", java= " + java + ", servlet= " + servlet;
+
     }
 
 }

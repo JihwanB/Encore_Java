@@ -5,18 +5,28 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Employee {
+public class EmployeeDTO {
 
     private String name;
     private String employeeNo;
     private int age;
 
-    public Employee(String name, String employeeNo, int age) {
+    public EmployeeDTO(String name, String employeeNo, int age) {
+
         this.name = name;
         this.employeeNo = employeeNo;
         this.age = age;
+
     }
 
-    public Employee() {
+    public EmployeeDTO() {
+
     }
+
+    public String emp_Info() {
+
+        return  "name= " + name + ", employeeNo= " + employeeNo + ", age= " + age;
+
+    }
+
 }

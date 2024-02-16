@@ -1,4 +1,4 @@
-package com.encore.collection.list;
+package com.encore.jcf.collection.list;
 
 import com.encore.hms.domain.StudentDTO;
 import com.encore.hms.domain.TeacherDTO;

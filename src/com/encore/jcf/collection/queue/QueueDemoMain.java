@@ -1,4 +1,4 @@
-package com.encore.collection.queue;
+package com.encore.jcf.collection.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;

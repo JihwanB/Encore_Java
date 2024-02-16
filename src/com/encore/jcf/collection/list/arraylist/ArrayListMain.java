@@ -1,4 +1,4 @@
-package com.encore.collection.list.arraylist;
+package com.encore.jcf.collection.list.arraylist;
 
 import com.encore.hms.domain.EmployeeDTO;
 import com.encore.hms.domain.StudentDTO;

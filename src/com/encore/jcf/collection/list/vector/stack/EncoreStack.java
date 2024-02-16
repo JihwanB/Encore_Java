@@ -1,6 +1,5 @@
-package com.encore.collection.list.vector.stack;
+package com.encore.jcf.collection.list.vector.stack;
 
-import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 public class EncoreStack {

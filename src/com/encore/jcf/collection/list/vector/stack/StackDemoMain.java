@@ -1,6 +1,4 @@
-package com.encore.collection.list.vector.stack;
-
-import java.util.Stack;
+package com.encore.jcf.collection.list.vector.stack;
 
 public class StackDemoMain {
 

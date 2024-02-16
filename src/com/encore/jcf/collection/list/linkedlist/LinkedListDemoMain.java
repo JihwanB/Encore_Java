@@ -1,4 +1,4 @@
-package com.encore.collection.list.linkedlist;
+package com.encore.jcf.collection.list.linkedlist;
 
 import java.io.*;
 

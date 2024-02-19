@@ -1,4 +1,4 @@
-package com.encore.jcf.collection.list.vector;
+package com.encore.datastructure.collection.list.vector;
 
 /*
  싱글 스레드 : 순차실행 main start - 파일 다운로드(A) - 파일 다운로드(B) - 파일 다운로드(C) - main end

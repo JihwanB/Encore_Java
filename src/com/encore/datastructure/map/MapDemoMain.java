@@ -1,4 +1,4 @@
-package com.encore.jcf.map;
+package com.encore.datastructure.map;
 
 import java.util.*;
 import java.util.Map.Entry;

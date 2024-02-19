@@ -1,4 +1,4 @@
-package com.encore.jcf.collection.list.vector.stack;
+package com.encore.datastructure.collection.list.vector.stack;
 
 import java.util.EmptyStackException;
 

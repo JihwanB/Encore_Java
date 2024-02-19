@@ -1,4 +1,4 @@
-package com.encore.jcf.collection.list.linkedlist;
+package com.encore.datastructure.collection.list.linkedlist;
 
 import java.io.*;
 

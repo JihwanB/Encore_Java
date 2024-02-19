@@ -40,8 +40,9 @@ public class MvcMain {
         SelectController select = new SelectController();
         List<PostResponseDTO> response = select.execute();
         for (PostResponseDTO dto : response) {
-            System.out.println("idx : " + dto.getIdx() + ", " + "title : " + dto.getTitle() + ", " + "content : "
-                    + dto.getContent() + ", " + "writer : " + dto.getWriter());
+            System.out.println(dto);
+//            System.out.println("idx : " + dto.getIdx() + ", " + "title : " + dto.getTitle() + ", " + "content : "
+//                    + dto.getContent() + ", " + "writer : " + dto.getWriter());
         }
 
     }

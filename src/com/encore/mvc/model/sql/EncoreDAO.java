@@ -100,7 +100,7 @@ public class EncoreDAO {
         Connection conn = null;
         PreparedStatement pstmt;
         ResultSet rSet;
-        List<PostResponseDTO> response = null;
+        List<PostResponseDTO> response = new ArrayList<>();
 
         try {
 
@@ -108,7 +108,6 @@ public class EncoreDAO {
             pstmt = conn.prepareStatement(query);
             rSet = pstmt.executeQuery();
 
-            response = new ArrayList<>();
             while (rSet.next()) {
                 PostResponseDTO dto = new PostResponseDTO(
                         rSet.getInt(1),
@@ -118,7 +117,7 @@ public class EncoreDAO {
                 );
                 response.add(dto);
             }
-            System.out.println("Result >>> " + response);
+            // System.out.println("Result >>> " + response);
 
         } catch (Exception e) {
             e.printStackTrace();

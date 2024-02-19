@@ -19,8 +19,7 @@ public class SelectController {
         System.out.println(">>> selectController execute <<<");
 
         // 의존관계 형성 후 메서드 호출 / 반환
-        List<PostResponseDTO> response = service.selectService();
-        return response;
+        return service.selectService();
     }
 
 

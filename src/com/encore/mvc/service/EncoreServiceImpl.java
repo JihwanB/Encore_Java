@@ -20,22 +20,19 @@ public class EncoreServiceImpl {
     public int insertService(PostRequestDTO params) {
         System.out.println(">>> Service insertService <<<");
         System.out.println(">>> params : " + params);
-        int flag = dao.insertRow(params);
-        return flag;
+        return dao.insertRow(params);
     }
 
     public int insertService(Map<String, String> params) {
         System.out.println(">>> Service insertService <<<");
         System.out.println(">>> params : " + params);
-        int flag = dao.insertRow(params);
-        return flag;
+        return dao.insertRow(params);
     }
 
     public List<PostResponseDTO> selectService() {
         System.out.println(">>> Service selectService <<<");
 
-        List<PostResponseDTO> response = dao.selectRow();
-        return response;
+        return dao.selectRow();
     }
 
 }
